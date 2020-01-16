@@ -3,19 +3,15 @@ include custom.mk
 .PHONY: all clean
 #MEP_APP:=sip_streamer
 #MEP_APP:=sip_receiver
-#MEP_APP:=test-receiver
-MEP_APP:=list-devices
+#MEP_APP:=list-devices
 #MEP_APP:=file2sound
-#MEP_APP:=custome-media-port
-#MEP_APP:=confbridge
 #MEP_APP:=conf_to_2_sounds
-#MEP_APP:=test_pj_stream
 #MEP_APP:=sound_conf_file
 #MEP_APP:=simple_ics
 #MEP_APP:=pthread_endpoints
 #MEP_APP:=same_endpt
 #MEP_APP:=internal_stream
-#MEP_APP:=splitcomb_file2sound
+MEP_APP:=splitcomb_file2sound
 #MEP_APP:=sc_1file_to_2sound
 #MEP_APP:=sc_pjsua_1file_to_2sound
 #MEP_APP:=func_sc_pjsua_1file_to_2sound
@@ -70,7 +66,7 @@ all: $(MEP_APP)
 
 $(MEP_APP):$(APP_SRCS:.c=.o) $(AU_PROCESS_SRCES:.c=.o) $(AGC_SRCS:.c=.o) $(VAD_SRCS:.c=.o) $(NS_SRCS:.c=.o) $(SPL_SRCS:.c=.o)
 	$(CROSS_TOOL) -o $@ $^ $(LIBS)
-$(APP_SRCS:.c=.o): %.o: $(SRC_DIR)/test/%.c
+$(APP_SRCS:.c=.o): %.o: $(SRC_DIR)/test_src/%.c
 	$(CROSS_TOOL) -c -o $@ $< $(CFLAGS)
 $(AU_PROCESS_SRCES:.c=.o): %.o: $(AU_PROCESS_DIR)/src/%.c
 	$(CROSS_TOOL) -c -o $@ $< $(CFLAGS)
