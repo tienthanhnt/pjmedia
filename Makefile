@@ -3,7 +3,7 @@ include custom.mk
 .PHONY: all clean
 #MEP_APP:=sip_streamer
 #MEP_APP:=sip_receiver
-#MEP_APP:=list-devices
+MEP_APP:=list-devices
 #MEP_APP:=file2sound
 #MEP_APP:=conf_to_2_sounds
 #MEP_APP:=sound_conf_file
@@ -11,7 +11,7 @@ include custom.mk
 #MEP_APP:=pthread_endpoints
 #MEP_APP:=same_endpt
 #MEP_APP:=internal_stream
-MEP_APP:=splitcomb_file2sound
+#MEP_APP:=splitcomb_file2sound
 #MEP_APP:=sc_1file_to_2sound
 #MEP_APP:=sc_pjsua_1file_to_2sound
 #MEP_APP:=func_sc_pjsua_1file_to_2sound
@@ -25,7 +25,7 @@ SRC_DIR:=.
 APP_SRCS:=$(MEP_APP).c
 SRCS:=endpoint.c
 
-AU_PROCESS_DIR:=audio-processing-rv
+AU_PROCESS_DIR:=audio_processing
 AU_PROCESS_SRCES:=processing-port.c
 
 #### AUTO GAIN CONTROL ########################
